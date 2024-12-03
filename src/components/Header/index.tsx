@@ -1,4 +1,6 @@
+import headerData from "./data"
 function Header() {
+
   return (
     <header className="bg-blue-500 shadow-lg">
       <div className="container mx-auto px-4 py-3">
@@ -7,12 +9,15 @@ function Header() {
             <h1 className="text-white text-3xl font-bold">FE Task</h1>
           </a>
           <nav className="hidden md:flex items-center space-x-6">
-            <a
-              href="/"
-              className="text-white hover:text-blue-200 transition-colors duration-200 font-medium"
-            >
-              Home
-            </a>
+            {headerData.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-white hover:text-blue-200 transition-colors duration-200 font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
           <div className="md:hidden">
@@ -36,12 +41,15 @@ function Header() {
         </div>
 
         <nav className="hidden px-2 pt-2 pb-4 space-y-2">
-          <a
-            href="#"
-            className="block text-white hover:bg-blue-600 rounded-lg px-3 py-2 font-medium"
-          >
-            Home
-          </a>
+          {headerData.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="block text-white hover:bg-blue-600 rounded-lg px-3 py-2 font-medium"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
