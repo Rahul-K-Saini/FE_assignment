@@ -105,8 +105,7 @@ const Form: React.FC<{ data: FormDataType[]; formName: string }> = ({
   return (
     <div className="max-w-3xl mx-auto p-8 bg-white rounded-xl ">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">
-        {formName.at(0)?.toUpperCase() + formName.slice(1)} Form
-      </h2>
+        {formName.charAt(0)?.toUpperCase() + formName.slice(1)} Form      </h2>
 
       <div className="mb-6 bg-gray-200 rounded-full h-2">
         <div
